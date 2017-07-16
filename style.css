@@ -1,0 +1,81 @@
+
+body {
+
+	background-image: url("train-schedule/train4.jpg");
+	background-repeat: no-repeat;
+	background-size: 110%;
+
+}
+
+
+h1 {
+
+	text-align: center;
+	color: white;
+
+}
+
+h2 {
+
+	text-align: center;
+	color: white;
+}
+
+h4{
+
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+
+.jumbotron {
+
+	background-color: orange;
+	margin-top: 20px;
+	opacity: 0.7;
+}
+
+.Schedule {
+
+	background-color: navy;
+	color: white;
+	font-size: 20px;
+	padding:15px;
+	opacity: 0.7;
+}
+
+h3 {
+
+font-weight: bold;
+
+}
+
+
+
+.add-train {
+
+	background-color: navy;
+	color: white;
+	font-size: 20px;
+	padding:15px;
+		opacity: 0.7;
+
+}
+
+.border1 {
+
+	border: solid 2px;
+	border-color: navy;
+
+		padding: 15px;
+}
+
+.border2 {
+
+	border: solid 2px;
+	border-color: navy;
+	margin-top: 15px; 
+	padding: 15px;
+		opacity: 0.7;
+}

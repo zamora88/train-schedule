@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>train-schedule</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
+</head>
+<body>
+<div class="container">
+  <div class="jumbotron">
+    	<h1>Train-Schedule</h1>   
+	<h2>Choo! Choo!</h2>  
+ </div>
+
+	<div class="border1">	
+    <div class="row">
+    	<div class="col-md-12">
+    		<p class="Schedule">Current Train Schedule</p>
+    	</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-2">
+    			<h4>Train Name</h4>
+    			<p id="runaway"></p>
+    		</div>
+
+
+    	<div class="col-md-2">
+    		<h4>Destination</h4>
+    			<p id="destination"></p>
+    	   </div>
+    	
+    	<div class="col-md-2">
+    			<h4>Frequency(min)</h4>
+    				<p id="frequency"></p>
+    				
+    	</div>
+
+    	<div class="col-md-2">
+    		<h4>Next arrival</h4>
+    		<p id="next-arrival"></p>
+    	</div>
+
+    	<div class="col-md-3">
+    		<h4>Minutes away</h4>
+    		<p id="minute-away"></p>
+    		</div>
+    	</div>
+
+  
+   </div>
+
+    <div class="border2">
+
+        <div class="row">
+        	<div class="col-md-12">
+        		<p class="add-train">Add Train</p>
+
+    			<h4>Train Name:</h4>
+    			<input type="text" class="col-md-12" id="train-name">
+    			
+                <h4>Destination:</h4>
+    			<input type="text" class="col-md-12" id="wheretogo">
+    			
+                <h4>First Train Time (HH:mm - Military time):</h4>
+    			<input type="text" class="col-md-12" id="first-train">
+    			
+                <h4>Frequency (min):</h4>
+    	       	<input type="text" class="col-md-12" id="frequency01"><br><br>
+            	
+                <button type="button" class="btn btn-primary" id="add-user">Submit</button>
+            </div>
+        </div>
+           
+
+    </div>
+
+
+
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
