@@ -1,9 +1,7 @@
 
 body {
 
-	background-image: url("train-schedule/train4.jpg");
-	background-repeat: no-repeat;
-	background-size: 110%;
+
 
 }
 
@@ -11,19 +9,19 @@ body {
 h1 {
 
 	text-align: center;
-	color: white;
+	color: red;
 
 }
 
 h2 {
 
 	text-align: center;
-	color: white;
+	color: red;
 }
 
 h4{
 
-	color: white;
+	color: red;
 	font-size: 25px;
 	font-weight: bold;
 }
@@ -39,7 +37,7 @@ h4{
 .Schedule {
 
 	background-color: navy;
-	color: white;
+	color: red;
 	font-size: 20px;
 	padding:15px;
 	opacity: 0.7;
@@ -56,7 +54,7 @@ font-weight: bold;
 .add-train {
 
 	background-color: navy;
-	color: white;
+	color: blue;
 	font-size: 20px;
 	padding:15px;
 		opacity: 0.7;
@@ -79,3 +77,15 @@ font-weight: bold;
 	padding: 15px;
 		opacity: 0.7;
 }
+
+
+
+
+
+
+
+
+
+
+
+

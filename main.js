@@ -10,17 +10,16 @@
 
     firebase.initializeApp(config);
 
-    var database = firebase.database();
+	var database = firebase.database();
 
- 
-    // Capture Button Click
+ // Capture Button Click
     $("#add-user").on("click", function(event) {
       event.preventDefault();
 
        var train = $("#train-name").val().trim();
        var destination = $("#wheretogo").val().trim();
-       var firstTrain = moment($("#first-train").val().trim(), "HH:mm").format("X");
        var frequency = $("#frequency01").val().trim();
+       var firstTrain = $("first-train").val().trim();
 
       database.ref().push({
 
@@ -34,36 +33,46 @@
 
 
    firebase.database().ref().on("child_added", function(snapshot){
-   	var currentObj = snapshot.val();
+    var currentObj = snapshot.val();
 
-   	if(currentObj.train){
+    if(currentObj.train){
 
-		$("#runaway").append("<p>"+snapshot.val().train+"</p>")
+        $("tbody").append("<p>"+currentObj.train+"</p>")
 
-		$("#destination").append("<p>"+snapshot.val().destination+"</p>")
+        $("#tbody").append("<p>"+currentObj.destination+"</p>")
 
 
-	   	$("#frequency").append("<p>"+snapshot.val().frequency+"</p>")
-   	}
-   	
+        $("#tbody").append("<p>"+currentObj.frequency+"</p>")
 
-   });
+
+        $("#tbody").append("<p>"+currentObj.firstTrain+"</p>")
+
+        
+}
+})
+        
    
-
-    database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+     database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
      
       var sv = snapshot.val();
-	  // Change the HTML to reflect
-      $("#runaway").html(sv.train);
-      $("#destination").html(sv.destination);
-      $("#frequency").html(sv.frequency);
+      // Change the HTML to reflect
+      $("#train-name").html(sv.train);
+      $("#wheretogo").html(sv.destination);
+      $("#frequency01").html(sv.frequency);
+      $("#firstTrain").html(sv.firstTrain);
+});
 
 
 
-      // Handle the errors
-    }, function(errorObject) {
-      console.log("Errors handled: " + errorObject.code);
-    });
+
+
+
+
+
+
+
+     
+ 
 
 
  
