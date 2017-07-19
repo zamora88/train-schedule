@@ -1,78 +1,77 @@
- var config = {
-    apiKey: "AIzaSyDiLNCE32fwFFzooPJYoDv8O3hLN-G5q0U",
+ // Initialize Firebase
+  var config = {
+     apiKey: "AIzaSyDiLNCE32fwFFzooPJYoDv8O3hLN-G5q0U",
     authDomain: "train-schedule-f1606.firebaseapp.com",
     databaseURL: "https://train-schedule-f1606.firebaseio.com",
     projectId: "train-schedule-f1606",
-    storageBucket: "",
+    storageBucket: "train-schedule-f1606.appspot.com",
     messagingSenderId: "613302674138"
   };
+  firebase.initializeApp(config);
 
 
-    firebase.initializeApp(config);
-
-	var database = firebase.database();
-
+    var database = firebase.database();
  // Capture Button Click
     $("#add-user").on("click", function(event) {
       event.preventDefault();
-
        var train = $("#train-name").val().trim();
        var destination = $("#wheretogo").val().trim();
+         var firstTrain = moment($("#first-train").val().trim(), "HH:mm").subtract(10, "years").format("X");
        var frequency = $("#frequency01").val().trim();
-       var firstTrain = $("first-train").val().trim();
+     
 
-      database.ref().push({
+     console.log(firstTrain);
+     return false;
 
-        train: train,
+
+     var newTrain = {
+        name: train,
         destination: destination,
         frequency: frequency,
         firstTrain: firstTrain,
-        dateAdded: firebase.database.ServerValue.TIMESTAMP
-      });
-    });
+
+     }
 
 
-   firebase.database().ref().on("child_added", function(snapshot){
-    var currentObj = snapshot.val();
 
-    if(currentObj.train){
+      database.ref().push(newTrain);
 
-        $("tbody").append("<p>"+currentObj.train+"</p>")
+      $("#train-name").val("");
 
-        $("#tbody").append("<p>"+currentObj.destination+"</p>")
+      $("#wheretogo").val("");
 
+      $("#first-train").val("");
 
-        $("#tbody").append("<p>"+currentObj.frequency+"</p>")
+      $("#frequency01").val("");
 
-
-        $("#tbody").append("<p>"+currentObj.firstTrain+"</p>")
-
-        
-}
+      return false;
 })
-        
-   
-     database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
-     
-      var sv = snapshot.val();
-      // Change the HTML to reflect
-      $("#train-name").html(sv.train);
-      $("#wheretogo").html(sv.destination);
-      $("#frequency01").html(sv.frequency);
-      $("#firstTrain").html(sv.firstTrain);
+
+      database.ref().on("child_added", function(snapshot){
+      var name = snapshot.val().name;
+      var destination = snapshot.val().destination;
+      var firstTrain = snapshot.val().firstTrain;
+      var frequency = snapshot.val().frequency;
+
+
+     var remainder = moment().diff(moment.unix(firstTrain), "minutes") % frequency;
+     var minutes = frequency - remainder;
+     var arrival = moment().add(minutes, "m").format("HH:mm A");
+
+      
+  
+   var tr = $("<tr>");
+     $("tbody").append(tr);
+    tr.append("<td>" + destination + "<td>" + firstTrain + "<td>" + frequency + "<td>" + train + "<td>" + arrival + );
+   //   "<td>" + minutes 
 });
-
-
-
-
-
-
-
-
-
-
-     
  
+    
+
+
+  
+
+//  var current = moment([2007, 0, 29]).fromNow(); 
 
 
  
