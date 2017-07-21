@@ -61,8 +61,7 @@
       
   
    var tr = $("<tr>");
-     $("tbody").append(tr);
-    tr.append("<td>" + destination + "<td>" + firstTrain + "<td>" + frequency + "<td>" + train + "<td>" + arrival + );
+     $("tbody").tr.append("<td>" + destination + "<td>" + firstTrain + "<td>" + frequency + "<td>" + train + "<td>" + arrival + );
    //   "<td>" + minutes 
 });
  
