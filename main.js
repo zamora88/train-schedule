@@ -14,14 +14,12 @@
  // Capture Button Click
  $("#add-user").on("click", function(event) {
      event.preventDefault();
-    // var train = $("#train-name").val().trim();
-    // var destination = $("#wheretogo").val().trim();
-    // var firstTrain = moment($("#first-train").val().trim(), "HH:mm").subtract(10, "years").format("X");
-    // var frequency = $("#frequency01").val().trim();
+    var train = $("#train-name").val().trim();
+    var destination = $("#wheretogo").val().trim();
+    var firstTrain = moment($("#first-train").val().trim(), "HH:mm").subtract(10, "years").format("X");
+    var frequency = $("#frequency01").val().trim();
 
 
-
-     return false;
 
 
      var newTrain = {
@@ -46,8 +44,8 @@
 
      return false;
 
-     empty(newTrain);
- });
+   
+ })
 
  database.ref().on("child_added", function(snapshot) {
      var name = snapshot.val().name;
@@ -62,7 +60,7 @@
 
      var tr = $("<tr>");
 
-     $("tbody").append(tr).append("<td>" + destination + "</td> <td>" + firstTrain + "</td><td>" + frequency + "</td><td>" + arrival + "</td><td>" + minutes + "</td>" ); 
+     $("tbody").append(tr).append("<td>" + name + "</td> <td>" + destination + "</td><td>" + frequency + "</td><td>" + arrival + "</td><td>" + minutes + "</td>" ); 
 
      console.log(arrival)
      console.log(remainder)
