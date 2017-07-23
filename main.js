@@ -14,23 +14,12 @@
  // Capture Button Click
  $("#add-user").on("click", function(event) {
      event.preventDefault();
-<<<<<<< HEAD
     var train = $("#train-name").val().trim();
     var destination = $("#wheretogo").val().trim();
     var firstTrain = moment($("#first-train").val().trim(), "HH:mm").subtract(10, "years").format("X");
     var frequency = $("#frequency01").val().trim();
 
 
-=======
-     var train = $("#train-name").val().trim();
-     var destination = $("#wheretogo").val().trim();
-     var firstTrain = moment($("#first-train").val().trim(), "HH:mm").subtract(10, "years").format("X");
-     var frequency = $("#frequency01").val().trim();
-
-
-     console.log(firstTrain);
-     return false;
->>>>>>> 6117ea273a8bba4be56ff1a3ca6254218ec8acd7
 
 
      var newTrain = {
@@ -54,13 +43,9 @@
      $("#frequency01").val("");
 
      return false;
-<<<<<<< HEAD
 
    
  })
-=======
- });
->>>>>>> 6117ea273a8bba4be56ff1a3ca6254218ec8acd7
 
  database.ref().on("child_added", function(snapshot) {
      var name = snapshot.val().name;
@@ -73,7 +58,6 @@
      var minutes = frequency - remainder;
      var arrival = moment().add(minutes, "m").format("HH:mm A");
 
-<<<<<<< HEAD
      var tr = $("<tr>");
 
      $("tbody").append(tr).append("<td>" + name + "</td> <td>" + destination + "</td><td>" + frequency + "</td><td>" + arrival + "</td><td>" + minutes + "</td>" ); 
@@ -84,24 +68,3 @@
  });
 
 
-
-
- //   "<td>" + minutes 
-
-
-
-=======
-
-
-     var tr = $("<tr>");
-     $("tbody").append(tr).append("<td>" + destination + "</td> <td>" + firstTrain + "</td><td>" + frequency + "</td><td>" + arrival + "</td><td>" + minutes + "</td>" ); //error in console...had an extra plus sign, and you were appending tr variable improperly, also train was not defined, found error in console...Most issues are found in console!
-     //   "<td>" + minutes 
- });
-
-
-
->>>>>>> 6117ea273a8bba4be56ff1a3ca6254218ec8acd7
-
-
-
- //  var current = moment([2007, 0, 29]).fromNow();
