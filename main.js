@@ -14,7 +14,7 @@
  // Capture Button Click
  $("#add-user").on("click", function(event) {
      event.preventDefault();
-    var train = $("#train-name").val().trim();
+  //  var train = $("#train-name").val().trim();
     var destination = $("#wheretogo").val().trim();
     var firstTrain = moment($("#first-train").val().trim(), "HH:mm").subtract(10, "years").format("X");
     var frequency = $("#frequency01").val().trim();
