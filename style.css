@@ -1,71 +1,91 @@
-body {}
+
+body {
+
+
+
+}
 
 
 h1 {
 
-    text-align: center;
-    color: red;
+	text-align: center;
+	color: red;
+
 }
 
 h2 {
 
-    text-align: center;
-    color: red;
+	text-align: center;
+	color: red;
 }
 
-h4 {
+h4{
 
-    color: red;
-    font-size: 25px;
-    font-weight: bold;
+	color: red;
+	font-size: 25px;
+	font-weight: bold;
 }
 
 
 .jumbotron {
 
-    background-color: orange;
-    margin-top: 20px;
-    opacity: 0.7;
+	background-color: orange;
+	margin-top: 20px;
+	opacity: 0.7;
 }
 
 .Schedule {
 
-    background-color: navy;
-    color: red;
-    font-size: 20px;
-    padding: 15px;
-    opacity: 0.7;
+	background-color: navy;
+	color: red;
+	font-size: 20px;
+	padding:15px;
+	opacity: 0.7;
 }
 
 h3 {
 
-    font-weight: bold;
+font-weight: bold;
+
 }
 
 
 
 .add-train {
 
-    background-color: navy;
-    color: blue;
-    font-size: 20px;
-    padding: 15px;
-    opacity: 0.7;
+	background-color: navy;
+	color: blue;
+	font-size: 20px;
+	padding:15px;
+		opacity: 0.7;
+
 }
 
 .border1 {
 
-    border: solid 2px;
-    border-color: navy;
+	border: solid 2px;
+	border-color: navy;
 
-    padding: 15px;
+		padding: 15px;
 }
 
 .border2 {
 
-    border: solid 2px;
-    border-color: navy;
-    margin-top: 15px;
-    padding: 15px;
-    opacity: 0.7;
+	border: solid 2px;
+	border-color: navy;
+	margin-top: 15px; 
+	padding: 15px;
+		opacity: 0.7;
 }
+
+
+
+
+
+
+
+
+
+
+
+
